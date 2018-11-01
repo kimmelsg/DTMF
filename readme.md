@@ -15,7 +15,7 @@ $ npm install @kimmel/dtmf
 ```js
 import DTMF from '@kimmel/dtmf';
 
-let player = DTMF();
+let player = new DTMF();
 player.play(1);
 player.play(8);
 player.play(0);
