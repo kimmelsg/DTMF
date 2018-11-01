@@ -17,9 +17,12 @@
     "start": "tsc -w"
   },
   "files": [
-    "index.js"
+    "build/index.js",
+    "build/index.d.ts",
+    "build/index.js.map"
   ],
   "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "keywords": [
     "dual tone multi frequency",
     "phone",
