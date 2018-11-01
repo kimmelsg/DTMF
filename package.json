@@ -1,0 +1,44 @@
+{
+  "name": "@kimmel/dtmf",
+  "version": "0.0.0",
+  "description": "Dual Tone - Multi Frequency player",
+  "license": "MIT",
+  "repository": "@kimmel/dtmf",
+  "author": {
+    "name": "Ryan Castner",
+    "email": "rcastner@kimmel.com",
+    "url": "https://kimmel.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "test": "xo && nyc ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "dual tone multi frequency",
+    "phone",
+    "touch tone",
+    "webaudio"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.12.1",
+    "ava": "^0.25.0",
+    "codecov": "^3.0.0",
+    "nyc": "^12.0.0",
+    "typescript": "^3.1.5",
+    "xo": "^0.21.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
