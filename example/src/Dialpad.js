@@ -1,20 +1,20 @@
-import React from "react";
-import * as S from "./styles";
-import DTMF from "./DTMF";
+import React from 'react';
+import DTMF from '@kimmel/dtmf';
+import * as S from './styles';
 
 const NUMBER_PAD = [
-  [1, ""],
-  [2, "ABC"],
-  [3, "DEF"],
-  [4, "GHI"],
-  [5, "JKL"],
-  [6, "MNO"],
-  [7, "PQRS"],
-  [8, "TUV"],
-  [9, "WXYZ"],
-  ["*", ""],
-  [0, ""],
-  ["#", ""]
+  [1, ''],
+  [2, 'ABC'],
+  [3, 'DEF'],
+  [4, 'GHI'],
+  [5, 'JKL'],
+  [6, 'MNO'],
+  [7, 'PQRS'],
+  [8, 'TUV'],
+  [9, 'WXYZ'],
+  ['*', ''],
+  [0, ''],
+  ['#', ''],
 ];
 
 class DialPad extends React.Component {
@@ -35,13 +35,9 @@ class DialPad extends React.Component {
     return (
       <S.Pad>
         {NUMBER_PAD.map(([number, subtext]) => (
-          <S.Button
-            key={number}
-            onClick={this.handleClick(number)}
-            name={number}
-          >
+          <S.Button key={number} onClick={this.handleClick(number)} name={number}>
             {number}
-            <S.Subtext>{subtext || " "}</S.Subtext>
+            <S.Subtext>{subtext || ' '}</S.Subtext>
           </S.Button>
         ))}
       </S.Pad>
