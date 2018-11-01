@@ -20,7 +20,11 @@ type KeypadKey =
   | "9"
   | "0"
   | "#"
-  | "*";
+  | "*"
+  | "A"
+  | "B"
+  | "C"
+  | "D";
 
 class DTMF {
   oscillatorLow: OscillatorNode | undefined;
@@ -109,6 +113,18 @@ class DTMF {
         break;
       case "#":
         this.playTone(941, 1477);
+        break;
+      case "A":
+        this.playTone(697, 1633);
+        break;
+      case "B":
+        this.playTone(770, 1633);
+        break;
+      case "C":
+        this.playTone(852, 1633);
+        break;
+      case "D":
+        this.playTone(941, 1633);
         break;
     }
   }
