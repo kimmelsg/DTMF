@@ -14,8 +14,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "tsc -w",
-    "test": "xo && nyc ava"
+    "start": "tsc -w"
   },
   "files": [
     "index.js"
