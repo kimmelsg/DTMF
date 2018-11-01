@@ -20,11 +20,14 @@
   "files": [
     "index.js"
   ],
+  "main": "build/index.js",
   "keywords": [
     "dual tone multi frequency",
     "phone",
     "touch tone",
-    "webaudio"
+    "webaudio",
+    "keypad",
+    "dialer"
   ],
   "dependencies": {},
   "devDependencies": {
