@@ -2,6 +2,8 @@
 
 > Dual Tone - Multi Frequency player using Web Audio API
 
+Try the [Demo](https://kimmelsg.github.io/dtmf/)
+
 ## Install
 
 ```
@@ -11,7 +13,7 @@ $ npm install @kimmel/dtmf
 ## Usage
 
 ```js
-import DTMF from "@kimmel/dtmf";
+import DTMF from '@kimmel/dtmf';
 
 let player = DTMF();
 player.play(1);
