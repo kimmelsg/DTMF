@@ -9,22 +9,22 @@ type KeypadKey =
   | 7
   | 8
   | 9
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "5"
-  | "6"
-  | "7"
-  | "8"
-  | "9"
-  | "0"
-  | "#"
-  | "*"
-  | "A"
-  | "B"
-  | "C"
-  | "D";
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '0'
+  | '#'
+  | '*'
+  | 'A'
+  | 'B'
+  | 'C'
+  | 'D';
 
 class DTMF {
   oscillatorLow: OscillatorNode | undefined;
@@ -38,7 +38,7 @@ class DTMF {
 
   createOscillator({
     frequency,
-    type = "sine"
+    type = 'sine',
   }: {
     frequency: number;
     type?: OscillatorType;
@@ -60,7 +60,7 @@ class DTMF {
     this.oscillatorLow.connect(
       gainNode,
       0,
-      0
+      0,
     );
     gainNode.connect(this.audioContext.destination);
 
@@ -78,52 +78,52 @@ class DTMF {
 
   private playKey(key: KeypadKey): void {
     switch (String(key)) {
-      case "1":
+      case '1':
         this.playTone(697, 1209);
         break;
-      case "2":
+      case '2':
         this.playTone(697, 1336);
         break;
-      case "3":
+      case '3':
         this.playTone(697, 1477);
         break;
-      case "4":
+      case '4':
         this.playTone(770, 1209);
         break;
-      case "5":
+      case '5':
         this.playTone(770, 1336);
         break;
-      case "6":
+      case '6':
         this.playTone(770, 1477);
         break;
-      case "7":
+      case '7':
         this.playTone(852, 1209);
         break;
-      case "8":
+      case '8':
         this.playTone(852, 1336);
         break;
-      case "9":
+      case '9':
         this.playTone(852, 1477);
         break;
-      case "*":
+      case '*':
         this.playTone(941, 1209);
         break;
-      case "0":
+      case '0':
         this.playTone(941, 1336);
         break;
-      case "#":
+      case '#':
         this.playTone(941, 1477);
         break;
-      case "A":
+      case 'A':
         this.playTone(697, 1633);
         break;
-      case "B":
+      case 'B':
         this.playTone(770, 1633);
         break;
-      case "C":
+      case 'C':
         this.playTone(852, 1633);
         break;
-      case "D":
+      case 'D':
         this.playTone(941, 1633);
         break;
     }
