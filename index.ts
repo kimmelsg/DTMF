@@ -1,4 +1,4 @@
-type KeypadKey =
+export type KeypadKey =
   | 0
   | 1
   | 2
