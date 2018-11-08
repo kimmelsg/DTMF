@@ -30,7 +30,6 @@ class DTMF {
   oscillatorLow: OscillatorNode | undefined;
   oscillatorHigh: OscillatorNode | undefined;
   audioContext: AudioContext;
-  TONE_LENGTH = 150;
 
   constructor(audioContext?: AudioContext) {
     this.audioContext = audioContext || new AudioContext();
@@ -50,9 +49,6 @@ class DTMF {
   }
 
   playTone(lowFrequency: number, highFrequency: number): void {
-    this.stop();
-    let output,
-      input = 0;
     let gainNode = this.audioContext.createGain();
     gainNode.gain.value = 0.1;
 
@@ -70,10 +66,6 @@ class DTMF {
 
     this.oscillatorLow.start(0);
     this.oscillatorHigh.start(0);
-    setTimeout(() => {
-      this.oscillatorLow && this.oscillatorLow.stop();
-      this.oscillatorHigh && this.oscillatorHigh.stop();
-    }, this.TONE_LENGTH);
   }
 
   private playKey(key: KeypadKey): void {
