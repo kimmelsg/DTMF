@@ -49,6 +49,7 @@ class DTMF {
   }
 
   playTone(lowFrequency: number, highFrequency: number): void {
+    this.stop();
     let gainNode = this.audioContext.createGain();
     gainNode.gain.value = 0.1;
 

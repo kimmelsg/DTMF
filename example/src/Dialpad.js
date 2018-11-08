@@ -57,7 +57,7 @@ class DialPad extends React.Component {
 
   handleKeyUp({ key }) {
     this.setState({ previousKey: undefined });
-    this.player.stop(key);
+    this.player.stop();
   }
 
   render() {
