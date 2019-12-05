@@ -31,13 +31,14 @@ declare global {
     webkitAudioContext: any;
   }
 }
+
 class DTMF {
   oscillatorLow: OscillatorNode | undefined;
   oscillatorHigh: OscillatorNode | undefined;
   audioContext: AudioContext;
 
   constructor(audioContext?: AudioContext) {
-    const AudioContext = window.AudioContext || window.webkitAudioContext; // Default
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = audioContext || new AudioContext();
   }
 
