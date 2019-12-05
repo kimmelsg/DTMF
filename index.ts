@@ -26,9 +26,13 @@ export type KeypadKey =
   | 'C'
   | 'D';
 
+type WebAudioContext = {
+  new (contextOptions?: AudioContextOptions | undefined): AudioContext;
+  prototype: AudioContext;
+};
 declare global {
   interface Window {
-    webkitAudioContext: any;
+    webkitAudioContext: WebAudioContext;
   }
 }
 
