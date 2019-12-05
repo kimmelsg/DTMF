@@ -26,12 +26,19 @@ export type KeypadKey =
   | 'C'
   | 'D';
 
+declare global {
+  interface Window {
+    webkitAudioContext: any;
+  }
+}
+
 class DTMF {
   oscillatorLow: OscillatorNode | undefined;
   oscillatorHigh: OscillatorNode | undefined;
   audioContext: AudioContext;
 
   constructor(audioContext?: AudioContext) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = audioContext || new AudioContext();
   }
 
@@ -54,11 +61,7 @@ class DTMF {
     gainNode.gain.value = 0.1;
 
     this.oscillatorLow = this.createOscillator({ frequency: lowFrequency });
-    this.oscillatorLow.connect(
-      gainNode,
-      0,
-      0,
-    );
+    this.oscillatorLow.connect(gainNode, 0, 0);
     gainNode.connect(this.audioContext.destination);
 
     this.oscillatorHigh = this.createOscillator({ frequency: highFrequency });

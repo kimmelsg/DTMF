@@ -1,5 +1,5 @@
 import React from 'react';
-import DTMF from 'dtmf';
+import DTMF from '@kimmel/dtmf';
 import * as S from './styles';
 
 const NUMBER_PAD = [
